@@ -12,11 +12,11 @@ public class Conversation
     private UUID contextId;
 
     public Conversation(
-            UUID id,
-            UUID userId,
-            LocalDateTime createdAt,
-            String contextType,
-            UUID contextId)
+        UUID id,
+        UUID userId,
+        LocalDateTime createdAt,
+        String contextType,
+        UUID contextId)
     {
         this.id = id;
         this.userId = userId;
@@ -29,6 +29,7 @@ public class Conversation
     {
         return id;
     }
+
     public void setId(UUID id)
     {
         this.id = id;
@@ -38,6 +39,7 @@ public class Conversation
     {
         return userId;
     }
+
     public void setUserId(UUID userId)
     {
         this.userId = userId;
@@ -47,6 +49,7 @@ public class Conversation
     {
         return createdAt;
     }
+
     public void setCreatedAt(LocalDateTime createdAt)
     {
         this.createdAt = createdAt;
@@ -56,6 +59,7 @@ public class Conversation
     {
         return contextType;
     }
+
     public void setContextType(String contextType)
     {
         this.contextType = contextType;
@@ -65,6 +69,7 @@ public class Conversation
     {
         return contextId;
     }
+
     public void setContextId(UUID contextId)
     {
         this.contextId = contextId;

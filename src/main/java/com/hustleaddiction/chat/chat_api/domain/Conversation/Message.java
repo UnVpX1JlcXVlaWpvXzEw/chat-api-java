@@ -16,12 +16,12 @@ public class Message
     private LocalDateTime timestamp;
 
     public Message(
-            UUID id,
-            UUID conversationId,
-            SenderType senderType,
-            MessageType messageType,
-            String content,
-            LocalDateTime timestamp)
+        UUID id,
+        UUID conversationId,
+        SenderType senderType,
+        MessageType messageType,
+        String content,
+        LocalDateTime timestamp)
     {
         this.id = id;
         this.conversationId = conversationId;
@@ -35,6 +35,7 @@ public class Message
     {
         return id;
     }
+
     public void setId(UUID id)
     {
         this.id = id;
@@ -44,6 +45,7 @@ public class Message
     {
         return conversationId;
     }
+
     public void setConversationId(UUID conversationId)
     {
         this.conversationId = conversationId;
@@ -53,6 +55,7 @@ public class Message
     {
         return senderType;
     }
+
     public void setSenderType(SenderType senderType)
     {
         this.senderType = senderType;
@@ -62,6 +65,7 @@ public class Message
     {
         return messageType;
     }
+
     public void setMessageType(MessageType messageType)
     {
         this.messageType = messageType;
@@ -71,6 +75,7 @@ public class Message
     {
         return content;
     }
+
     public void setContent(String content)
     {
         this.content = content;
@@ -80,6 +85,7 @@ public class Message
     {
         return timestamp;
     }
+
     public void setTimestamp(LocalDateTime timestamp)
     {
         this.timestamp = timestamp;
