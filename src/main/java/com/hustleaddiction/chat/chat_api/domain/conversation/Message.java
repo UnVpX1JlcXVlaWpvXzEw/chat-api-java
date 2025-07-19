@@ -1,19 +1,39 @@
-package com.hustleaddiction.chat.chat_api.domain.Conversation;
+package com.hustleaddiction.chat.chat_api.domain.conversation;
 
-import com.hustleaddiction.chat.chat_api.domain.Conversation.Enum.MessageType;
-import com.hustleaddiction.chat.chat_api.domain.Conversation.Enum.SenderType;
-
+import com.hustleaddiction.chat.chat_api.domain.conversation.enums.MessageType;
+import com.hustleaddiction.chat.chat_api.domain.conversation.enums.SenderType;
+import jakarta.persistence.*;
+import org.hibernate.annotations.JdbcTypeCode;
+import java.sql.Types;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
+@Entity
+@Table(name = "message")
 public class Message
 {
+    @Id
+    @Column(columnDefinition = "CHAR(36)")
+    @JdbcTypeCode(Types.VARCHAR)
     private UUID id;
+
+    @Column(columnDefinition = "CHAR(36)", nullable = false)
+    @JdbcTypeCode(Types.VARCHAR)
     private UUID conversationId;
+
+    @Enumerated(EnumType.STRING)
     private SenderType senderType;
+
+    @Enumerated(EnumType.STRING)
     private MessageType messageType;
+
     private String content;
+
     private LocalDateTime timestamp;
+
+    public Message()
+    {
+    }
 
     public Message(
         UUID id,

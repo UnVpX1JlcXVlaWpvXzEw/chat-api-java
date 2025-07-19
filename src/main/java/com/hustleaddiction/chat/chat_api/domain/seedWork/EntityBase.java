@@ -1,4 +1,4 @@
-package com.hustleaddiction.chat.chat_api.domain.SeedWork;
+package com.hustleaddiction.chat.chat_api.domain.seedWork;
 
 import java.util.Date;
 import java.util.UUID;
