@@ -17,8 +17,6 @@ public class Conversation extends EntityBase implements IAggregateRoot
     @JdbcTypeCode(Types.VARCHAR)
     private UUID userId;
 
-    private LocalDateTime createdAt;
-
     private String contextType;
 
     @Column(columnDefinition = "CHAR(36)", nullable = false)
@@ -31,12 +29,10 @@ public class Conversation extends EntityBase implements IAggregateRoot
 
     public Conversation(
         UUID userId,
-        LocalDateTime createdAt,
         String contextType,
         UUID contextId)
     {
         this.userId = userId;
-        this.createdAt = createdAt;
         this.contextType = contextType;
         this.contextId = contextId;
     }
@@ -49,16 +45,6 @@ public class Conversation extends EntityBase implements IAggregateRoot
     public void setUserId(UUID userId)
     {
         this.userId = userId;
-    }
-
-    public LocalDateTime getCreatedAt()
-    {
-        return createdAt;
-    }
-
-    public void setCreatedAt(LocalDateTime createdAt)
-    {
-        this.createdAt = createdAt;
     }
 
     public String getContextType()

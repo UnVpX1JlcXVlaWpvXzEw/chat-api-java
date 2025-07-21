@@ -34,7 +34,6 @@ public class MessageService implements IMessageService
         {
             Conversation newConversation = new Conversation(
                 request.getUserId(),
-                LocalDateTime.now(),
                 "event",
                 UUID.randomUUID()
             );
