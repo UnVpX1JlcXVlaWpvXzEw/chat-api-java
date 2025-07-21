@@ -2,11 +2,13 @@ package com.hustleaddiction.chat.chat_api.application.dtos;
 
 import com.hustleaddiction.chat.chat_api.domain.conversation.enums.MessageType;
 import com.hustleaddiction.chat.chat_api.domain.conversation.enums.SenderType;
+import jakarta.validation.constraints.NotNull;
 
 import java.util.UUID;
 
 public class SendMessageRequestDto
 {
+    @NotNull
     private UUID userId;
     private String content;
     private MessageType messageType;

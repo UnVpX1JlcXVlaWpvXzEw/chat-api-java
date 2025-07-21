@@ -2,6 +2,7 @@ package com.hustleaddiction.chat.chat_api.domain.conversation;
 
 import com.hustleaddiction.chat.chat_api.domain.conversation.enums.MessageType;
 import com.hustleaddiction.chat.chat_api.domain.conversation.enums.SenderType;
+import com.hustleaddiction.chat.chat_api.domain.seedWork.EntityBase;
 import jakarta.persistence.*;
 import org.hibernate.annotations.JdbcTypeCode;
 import java.sql.Types;
@@ -10,13 +11,8 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "message")
-public class Message
+public class Message extends EntityBase
 {
-    @Id
-    @Column(columnDefinition = "CHAR(36)")
-    @JdbcTypeCode(Types.VARCHAR)
-    private UUID id;
-
     @Column(columnDefinition = "CHAR(36)", nullable = false)
     @JdbcTypeCode(Types.VARCHAR)
     private UUID conversationId;
@@ -36,29 +32,17 @@ public class Message
     }
 
     public Message(
-        UUID id,
         UUID conversationId,
         SenderType senderType,
         MessageType messageType,
         String content,
         LocalDateTime timestamp)
     {
-        this.id = id;
         this.conversationId = conversationId;
         this.senderType = senderType;
         this.messageType = messageType;
         this.content = content;
         this.timestamp = timestamp;
-    }
-
-    public UUID getId()
-    {
-        return id;
-    }
-
-    public void setId(UUID id)
-    {
-        this.id = id;
     }
 
     public UUID getConversationId()

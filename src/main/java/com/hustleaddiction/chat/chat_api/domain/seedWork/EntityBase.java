@@ -1,18 +1,52 @@
 package com.hustleaddiction.chat.chat_api.domain.seedWork;
 
+import jakarta.persistence.*;
+import org.hibernate.annotations.JdbcTypeCode;
+
+import java.sql.Types;
 import java.util.Date;
 import java.util.UUID;
 
+@MappedSuperclass
 public abstract class EntityBase
 {
+    @Temporal(TemporalType.TIMESTAMP)
     private Date creationDate;
-    private long id;
+
+    @Temporal(TemporalType.TIMESTAMP)
     private Date modificationDate;
-    private UUID uuid;
+
+    @Id
+    @Column(columnDefinition = "CHAR(36)")
+    @JdbcTypeCode(Types.VARCHAR)
+    private UUID id;
 
     protected EntityBase()
     {
-        this.uuid = UUID.randomUUID();
+        this.id = UUID.randomUUID();
+    }
+
+    @PrePersist
+    protected void onCreate()
+    {
+        this.creationDate = new Date();
+        this.modificationDate = new Date();
+    }
+
+    @PreUpdate
+    protected void onUpdate()
+    {
+        this.modificationDate = new Date();
+    }
+
+    public UUID getId()
+    {
+        return id;
+    }
+
+    public void setId(UUID id)
+    {
+        this.id = id;
     }
 
     public Date getCreationDate()
@@ -25,16 +59,6 @@ public abstract class EntityBase
         this.creationDate = creationDate;
     }
 
-    public long getId()
-    {
-        return id;
-    }
-
-    public void setId(long id)
-    {
-        this.id = id;
-    }
-
     public Date getModificationDate()
     {
         return modificationDate;
@@ -43,15 +67,5 @@ public abstract class EntityBase
     public void setModificationDate(Date modificationDate)
     {
         this.modificationDate = modificationDate;
-    }
-
-    public UUID getUuid()
-    {
-        return uuid;
-    }
-
-    public void setUuid(UUID uuid)
-    {
-        this.uuid = uuid;
     }
 }

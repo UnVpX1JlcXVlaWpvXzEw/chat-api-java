@@ -1,5 +1,7 @@
 package com.hustleaddiction.chat.chat_api.domain.conversation;
 
+import com.hustleaddiction.chat.chat_api.domain.seedWork.EntityBase;
+import com.hustleaddiction.chat.chat_api.domain.seedWork.IAggregateRoot;
 import jakarta.persistence.*;
 import org.hibernate.annotations.JdbcTypeCode;
 
@@ -9,13 +11,8 @@ import java.util.UUID;
 
 @Entity
 @Table(name = "conversation")
-public class Conversation
+public class Conversation extends EntityBase implements IAggregateRoot
 {
-    @Id
-    @Column(columnDefinition = "CHAR(36)")
-    @JdbcTypeCode(Types.VARCHAR)
-    private UUID id;
-
     @Column(columnDefinition = "CHAR(36)", nullable = false)
     @JdbcTypeCode(Types.VARCHAR)
     private UUID userId;
@@ -33,27 +30,15 @@ public class Conversation
     }
 
     public Conversation(
-        UUID id,
         UUID userId,
         LocalDateTime createdAt,
         String contextType,
         UUID contextId)
     {
-        this.id = id;
         this.userId = userId;
         this.createdAt = createdAt;
         this.contextType = contextType;
         this.contextId = contextId;
-    }
-
-    public UUID getId()
-    {
-        return id;
-    }
-
-    public void setId(UUID id)
-    {
-        this.id = id;
     }
 
     public UUID getUserId()
