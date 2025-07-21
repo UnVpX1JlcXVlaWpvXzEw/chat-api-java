@@ -29,7 +29,6 @@ public class ChatController
         @RequestParam(defaultValue = "0") int offset,
         @RequestParam(defaultValue = "10") int limit)
     {
-        return messageService
-            .getMessages(conversationId, offset, limit);
+        return messageService.getMessages(conversationId, offset, limit);
     }
 }

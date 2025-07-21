@@ -55,7 +55,10 @@ public class MessageService implements IMessageService
         return messageRepository.save(message);
     }
 
-    public List<Message> getMessages(UUID conversationId, int offset, int limit)
+    public List<Message> getMessages(
+        UUID conversationId,
+        int offset,
+        int limit)
     {
         if (limit <= 0)
         {
