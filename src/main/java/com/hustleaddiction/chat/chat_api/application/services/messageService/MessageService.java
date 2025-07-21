@@ -37,19 +37,19 @@ public class MessageService implements IMessageService
         Conversation conversation = conversationOpt.orElseGet(() ->
         {
             Conversation newConversation = new Conversation(
-                    request.getUserId(),
-                    "event",
-                    UUID.randomUUID()
+                request.getUserId(),
+                "event",
+                UUID.randomUUID()
             );
             return conversationRepository.save(newConversation);
         });
 
         Message message = new Message(
-                conversation.getId(),
-                request.getSenderType(),
-                request.getMessageType(),
-                request.getContent(),
-                LocalDateTime.now()
+            conversation.getId(),
+            request.getSenderType(),
+            request.getMessageType(),
+            request.getContent(),
+            LocalDateTime.now()
         );
 
         return messageRepository.save(message);
