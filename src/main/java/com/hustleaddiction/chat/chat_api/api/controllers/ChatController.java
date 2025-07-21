@@ -18,20 +18,5 @@ public class ChatController
     public Message sendMessage(@Valid @RequestBody SendMessageRequestDto request) {
 
         return messageService.sendMessage(request);
-
-
-//    @PostMapping("/send")
-//    public MessageResponseDto sendMessage(@RequestBody SendMessageRequestDto request) {
-//        //return messageService.sendMessage(request);
-//        Message message = messageService.sendMessage(request);
-//
-//        return new MessageResponseDto(
-//                message.getId(),
-//                message.getConversationId(),
-//                message.getSenderType(),
-//                message.getMessageType(),
-//                message.getContent(),
-//                message.getTimestamp()
-//        );
     }
 }
