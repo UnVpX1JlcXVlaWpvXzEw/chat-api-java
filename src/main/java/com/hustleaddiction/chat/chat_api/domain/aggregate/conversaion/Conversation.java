@@ -1,4 +1,4 @@
-package com.hustleaddiction.chat.chat_api.domain.aggregate.chat;
+package com.hustleaddiction.chat.chat_api.domain.aggregate.conversaion;
 
 import com.hustleaddiction.chat.chat_api.domain.seedWork.EntityBase;
 import com.hustleaddiction.chat.chat_api.domain.seedWork.IAggregateRoot;

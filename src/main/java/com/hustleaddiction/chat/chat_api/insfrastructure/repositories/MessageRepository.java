@@ -1,7 +1,7 @@
 package com.hustleaddiction.chat.chat_api.insfrastructure.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import com.hustleaddiction.chat.chat_api.domain.aggregate.chat.Message;
+import com.hustleaddiction.chat.chat_api.domain.aggregate.conversaion.Message;
 import org.springframework.stereotype.Repository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
