@@ -1,7 +1,7 @@
-package com.hustleaddiction.chat.chat_api.domain.conversation;
+package com.hustleaddiction.chat.chat_api.domain.aggregate;
 
-import com.hustleaddiction.chat.chat_api.domain.conversation.enums.MessageType;
-import com.hustleaddiction.chat.chat_api.domain.conversation.enums.SenderType;
+import com.hustleaddiction.chat.chat_api.domain.aggregate.enums.MessageType;
+import com.hustleaddiction.chat.chat_api.domain.aggregate.enums.SenderType;
 import com.hustleaddiction.chat.chat_api.domain.seedWork.EntityBase;
 import jakarta.persistence.*;
 import org.hibernate.annotations.JdbcTypeCode;

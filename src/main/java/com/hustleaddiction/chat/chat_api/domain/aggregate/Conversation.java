@@ -1,4 +1,4 @@
-package com.hustleaddiction.chat.chat_api.domain.conversation;
+package com.hustleaddiction.chat.chat_api.domain.aggregate;
 
 import com.hustleaddiction.chat.chat_api.domain.seedWork.EntityBase;
 import com.hustleaddiction.chat.chat_api.domain.seedWork.IAggregateRoot;
@@ -6,7 +6,6 @@ import jakarta.persistence.*;
 import org.hibernate.annotations.JdbcTypeCode;
 
 import java.sql.Types;
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 @Entity

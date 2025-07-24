@@ -1,7 +1,7 @@
 package com.hustleaddiction.chat.chat_api.api.controllers;
 
 import com.hustleaddiction.chat.chat_api.application.dtos.SendMessageRequestDto;
-import com.hustleaddiction.chat.chat_api.domain.conversation.Message;
+import com.hustleaddiction.chat.chat_api.domain.aggregate.Message;
 import com.hustleaddiction.chat.chat_api.application.services.messageService.MessageService;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
