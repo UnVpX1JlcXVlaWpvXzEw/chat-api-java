@@ -1,7 +1,7 @@
 package com.hustleaddiction.chat.chat_api.application.dtos;
 
-import com.hustleaddiction.chat.chat_api.domain.aggregate.enums.MessageType;
-import com.hustleaddiction.chat.chat_api.domain.aggregate.enums.SenderType;
+import com.hustleaddiction.chat.chat_api.domain.aggregate.chat.enums.MessageType;
+import com.hustleaddiction.chat.chat_api.domain.aggregate.chat.enums.SenderType;
 import jakarta.validation.constraints.NotNull;
 
 import java.util.UUID;

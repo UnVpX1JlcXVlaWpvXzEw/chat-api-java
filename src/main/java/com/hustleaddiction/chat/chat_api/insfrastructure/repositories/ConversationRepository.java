@@ -1,6 +1,6 @@
 package com.hustleaddiction.chat.chat_api.insfrastructure.repositories;
 
-import com.hustleaddiction.chat.chat_api.domain.aggregate.Conversation;
+import com.hustleaddiction.chat.chat_api.domain.aggregate.chat.Conversation;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 import java.util.UUID;
