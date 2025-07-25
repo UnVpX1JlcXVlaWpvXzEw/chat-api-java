@@ -7,7 +7,7 @@ on:
 
 env:
   REGISTRY: ghcr.io
-  IMAGE_NAME: chatapi
+  IMAGE_NAME: chat-api
 
 jobs:
   build:
