@@ -1,19 +1,8 @@
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/chat_api_dev?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-    username: root
-    password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
-
-  jpa:
-    hibernate:
-      ddl-auto: create-drop
-    show-sql: false
-    properties:
-      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
-
   cloud:
     config:
-      enabled: false
+      enabled: true
+  config:
+    import: optional:configserver:http://spring-cloud-config-server:8888
 server:
-  port: 0
+  port: 8080
