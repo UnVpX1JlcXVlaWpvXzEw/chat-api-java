@@ -1,16 +1,12 @@
 spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/chat_api_dev?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC
-    username: root
-    password: root
-    driver-class-name: com.mysql.cj.jdbc.Driver
-
-  jpa:
-    hibernate:
-      ddl-auto: update
-    show-sql: true
-    properties:
-      hibernate.dialect: org.hibernate.dialect.MySQL8Dialect
-
-server:
-  port: 8080
+  application:
+    name: chat-api
+  config:
+    import: "optional:configserver:"
+  cloud:
+    config:
+      uri: https://config.hustleaddiction.com/config
+      username: ${CONFIG_SERVER_USERNAME}
+      password: ${CONFIG_SERVER_PASSWORD}
+  profiles:
+    active: ${SPRING_PROFILES_ACTIVE:dev}

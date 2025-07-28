@@ -1,0 +1,10 @@
+#spring:
+#  application:
+#    name: chat-api
+#  cloud:
+#    config:
+#      uri: https://config.hustleaddiction.com
+#      username: ${CONFIG_SERVER_USERNAME}
+#      password: ${CONFIG_SERVER_PASSWORD}
+#  profiles:
+#    active: dev
